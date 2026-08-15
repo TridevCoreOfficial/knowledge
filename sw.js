@@ -1,4 +1,4 @@
-const CACHE = 'tridev-v3';
+const CACHE = 'tridev-v5';
 const ASSETS = ['./images/logo.png', './images/tridevcore.png', './manifest.json'];
 
 self.addEventListener('install', e => {
