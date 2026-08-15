@@ -13,14 +13,13 @@ html,body{background:#0a0a0a;color:#f0d080;font-family:system-ui,-apple-system,s
 img{max-width:100%;height:auto;display:block}
 a{color:#c9a84c}
 .top{background:#0a0a0a;padding:12px 16px;border-bottom:1px solid rgba(201,168,76,.4);position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px}
-.top .mark{width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#4af,#f40 60%,#80f);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.top img{width:34px;height:34px;border-radius:50%;object-fit:cover}
 .top b{color:#c9a84c;font-size:.95rem;letter-spacing:1px}
-.hero{padding:40px 18px 44px;text-align:center}
-.hero .logo-ring{width:110px;height:110px;border-radius:50%;margin:0 auto 14px;background:radial-gradient(circle at 40% 30%,#5bf 0%,#f50 45%,#a0f 100%);display:flex;align-items:center;justify-content:center;border:2px solid rgba(201,168,76,.5);box-shadow:0 0 30px rgba(100,50,255,.35)}
-.hero .logo-ring span{font-size:3.2rem;filter:drop-shadow(0 0 8px #fff)}
-.hero h1{font-size:clamp(1.7rem,5.5vw,2.3rem);color:#f0d080;margin:8px 0;font-weight:800}
-.hero .sub{color:#c9a84c;font-size:.78rem;letter-spacing:3px;margin-bottom:14px;text-transform:uppercase}
-.hero .metal{font-size:clamp(1.1rem,4vw,1.6rem);font-weight:900;letter-spacing:2px;background:linear-gradient(90deg,#4af,#f0d080,#f50);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0 14px;color:#f0d080}
+.hero{padding:36px 18px 40px;text-align:center}
+.hero .logo{width:130px;height:130px;border-radius:50%;margin:0 auto 14px;border:2px solid rgba(201,168,76,.5);object-fit:cover;box-shadow:0 0 28px rgba(100,50,255,.35)}
+.hero h1{font-size:clamp(1.7rem,5.5vw,2.3rem);color:#f0d080;margin:6px 0;font-weight:800;letter-spacing:1px}
+.hero .sub{color:#c9a84c;font-size:.78rem;letter-spacing:3px;margin-bottom:12px;text-transform:uppercase}
+.hero .banner{width:100%;max-width:420px;margin:10px auto 14px;border-radius:4px}
 .hero .tag{color:#d4c4a0;font-size:.95rem;line-height:1.75;margin:0 0 18px}
 .hero .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
 .hero .btns a{display:inline-block;padding:9px 15px;border:1px solid rgba(201,168,76,.5);color:#c9a84c;text-decoration:none;font-size:.72rem;border-radius:4px;background:rgba(201,168,76,.06)}
@@ -50,12 +49,8 @@ a{color:#c9a84c}
 .nc .bd{padding:12px}
 .nc .t{color:#c9a84c;font-size:.92rem;font-weight:600;margin-bottom:3px}
 .nc .d{color:rgba(232,213,176,.7);font-size:.85rem}
-.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.gal figure{margin:0;background:#141016;border-radius:8px;overflow:hidden;border:1px solid rgba(201,168,76,.12)}
-.gal img{width:100%;height:110px;object-fit:cover}
-.gal figcaption{padding:7px;color:#c9a84c;font-size:.7rem;text-align:center}
 .ft{background:#080608;padding:32px 16px 95px;text-align:center;border-top:1px solid rgba(201,168,76,.15)}
-.ft .mark{width:52px;height:52px;border-radius:50%;margin:0 auto 8px;background:radial-gradient(circle at 40% 35%,#4af,#f40 60%,#80f);display:flex;align-items:center;justify-content:center;font-size:1.6rem;border:2px solid rgba(201,168,76,.3)}
+.ft img{width:56px;height:56px;border-radius:50%;margin:0 auto 8px;border:2px solid rgba(201,168,76,.3);object-fit:cover}
 .ft .t{color:#c9a84c;font-size:1.1rem;margin-bottom:3px;font-weight:700}
 .ft .tag{color:rgba(232,213,176,.4);font-size:.82rem;margin-bottom:12px}
 .ft a{display:inline-block;color:rgba(232,213,176,.55);text-decoration:none;font-size:.7rem;margin:3px 4px;padding:5px 10px;border:1px solid rgba(201,168,76,.12);border-radius:3px}
@@ -65,12 +60,15 @@ a{color:#c9a84c}
 </style>
 </head>
 <body>
-<div class="top"><div class="mark">🔱</div><b>TRIDEV CORE HQ</b></div>
+<div class="top">
+<img src="images/logo.png" width="34" height="34" alt="Tridev Core HQ">
+<b>TRIDEV CORE HQ</b>
+</div>
 <header class="hero">
-<div class="logo-ring"><span>🔱</span></div>
+<img class="logo" src="images/logo.png" width="130" height="130" alt="Tridev Core HQ Logo">
 <h1>TRIDEV CORE HQ</h1>
 <div class="sub">Sanatan Knowledge Portal</div>
-<div class="metal">TRIDEV CORE HQ</div>
+<img class="banner" src="images/tridevcore.png" width="420" height="74" alt="TRIDEV CORE HQ">
 <p class="tag">सनातन धर्म — The Eternal Truth<br>नेपालको आत्मा • Soul of Nepal</p>
 <div class="btns">
 <a href="https://youtube.com/@TridevCoreHQ" target="_blank" rel="noopener">YouTube</a>
@@ -146,7 +144,7 @@ a{color:#c9a84c}
 </article>
 </section>
 <footer class="ft">
-<div class="mark">🔱</div>
+<img src="images/logo.png" width="56" height="56" alt="Logo">
 <div class="t">TRIDEV CORE HQ</div>
 <div class="tag">Fearless Voice of Nepal</div>
 <div>
