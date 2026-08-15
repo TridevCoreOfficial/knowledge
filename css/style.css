@@ -66,6 +66,40 @@ audio{width:100%;max-width:320px;height:36px;margin-top:8px;border-radius:6px}
 .sec h2{color:var(--gold);font-size:clamp(1.05rem,4vw,1.35rem);text-align:center;margin-bottom:4px;font-weight:700}
 .sec .s{text-align:center;color:var(--dim);font-size:.78rem;margin-bottom:16px;font-style:italic}
 
+/* Knowledge cards — Dharma / Vishvarupa / Awareness */
+#dharma .card,
+#vishvarupa .card,
+#awareness .card{
+  background:linear-gradient(145deg,rgba(201,168,76,.06),var(--card));
+  border:1px solid rgba(201,168,76,.22);
+  border-radius:14px;
+  padding:16px 14px;
+  margin-bottom:12px;
+  border-left:3px solid var(--gold);
+}
+#dharma .card .t,
+#vishvarupa .card .t,
+#awareness .card .t{
+  color:var(--gold);
+  font-size:.95rem;
+  font-weight:700;
+  margin-bottom:8px;
+  letter-spacing:.3px;
+}
+#dharma .card .d,
+#vishvarupa .card .d,
+#awareness .card .d{
+  color:var(--muted);
+  font-size:.86rem;
+  line-height:1.65;
+}
+#vishvarupa .card{border-left-color:#7c5cff}
+#awareness .card{border-left-color:#e8a020}
+#dharma .card:first-of-type{
+  background:linear-gradient(145deg,rgba(201,168,76,.12),rgba(18,16,20,.95));
+  box-shadow:0 4px 24px rgba(201,168,76,.08);
+}
+
 /* TRIDEV */
 .tc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 14px;margin-bottom:12px;text-align:center}
 .tc.s{border-top:3px solid #4a90d9}
@@ -143,7 +177,7 @@ audio{width:100%;max-width:320px;height:36px;margin-top:8px;border-radius:6px}
 .ft .tag{color:var(--dim);font-size:.74rem;margin:4px 0 10px}
 .ft a{display:inline-block;color:var(--dim);font-size:.66rem;margin:2px;padding:5px 10px;border:1px solid var(--border);border-radius:5px}
 
-/* BOTTOM NAV — phone */
+/* BOTTOM NAV */
 .bn{position:fixed;bottom:0;left:0;right:0;background:var(--navbg);border-top:1px solid rgba(201,168,76,.28);display:flex;z-index:50;padding-bottom:env(safe-area-inset-bottom,0);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .bn a{flex:1;text-align:center;padding:8px 2px 6px;color:var(--muted);font-size:.55rem;line-height:1.15;min-width:0}
 .bn .i{display:block;font-size:1.1rem;margin-bottom:2px}
@@ -161,20 +195,19 @@ html[lang=en] .block-en{display:block}
 .block-ne,.block-hi,.block-sa,.block-en{display:none}
 .sec.hidden{display:none!important}
 
-/* ========== TABLET (≥640px) ========== */
 @media (min-width:640px){
   :root{--max:680px}
   .av{grid-template-columns:repeat(3,1fr)}
   .av .card:nth-child(10){grid-column:2}
   .nc img{height:180px}
   .langbar button,.theme-btn{font-size:.62rem;padding:7px 10px}
+  #dharma .card .d,#vishvarupa .card .d,#awareness .card .d{font-size:.9rem}
 }
 
-/* ========== DESKTOP / PC / Mac / Windows (≥900px) ========== */
 @media (min-width:900px){
   :root{--max:900px}
   body{font-size:16px}
-  .top{padding:12px 24px;max-width:100%}
+  .top{padding:12px 24px}
   .top b{font-size:.95rem}
   .hero{padding:40px 24px 32px}
   .hero .logo{width:130px;height:130px}
@@ -186,21 +219,16 @@ html[lang=en] .block-en{display:block}
   .sec{padding:32px 24px 14px}
   .sec h2{font-size:1.4rem}
 
-  /* Tridev 3 columns on desktop */
   #tridev{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
   #tridev h2,#tridev .s{grid-column:1/-1}
   .tc{margin-bottom:0;height:100%}
   .tc .photo{width:130px;height:130px}
 
-  /* Dashavatar 5 cols */
   .av{grid-template-columns:repeat(5,1fr)}
   .av .card:nth-child(10){grid-column:auto}
 
-  /* Books wider covers */
   .bk{min-height:160px}
   .bk .coverimg{width:110px;min-width:110px;height:160px}
-  .bk .t{font-size:1rem}
-  .bk .d{font-size:.85rem}
 
   .nc{display:grid;grid-template-columns:1fr 1.2fr;align-items:center}
   .nc img{height:100%;min-height:160px;object-fit:cover}
@@ -208,21 +236,20 @@ html[lang=en] .block-en{display:block}
   .contact{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .contact a{margin:0}
 
-  /* Bottom nav centered & wider on desktop */
+  #dharma,#vishvarupa,#awareness{max-width:720px}
+
   .bn{left:50%;right:auto;transform:translateX(-50%);max-width:520px;border-radius:14px 14px 0 0;border-left:1px solid rgba(201,168,76,.2);border-right:1px solid rgba(201,168,76,.2)}
   .bn a{font-size:.6rem;padding:10px 4px 8px}
   .bn .i{font-size:1.2rem}
   .ft{padding-bottom:110px}
 }
 
-/* ========== LARGE DESKTOP (≥1200px) ========== */
 @media (min-width:1200px){
   :root{--max:980px}
   .hero{padding:48px 24px 36px}
   .sec{padding:36px 24px 16px}
 }
 
-/* Prefer reduced motion */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important}
