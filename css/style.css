@@ -66,7 +66,7 @@ audio{width:100%;max-width:320px;height:36px;margin-top:8px;border-radius:6px}
 .sec h2{color:var(--gold);font-size:clamp(1.05rem,4vw,1.35rem);text-align:center;margin-bottom:4px;font-weight:700}
 .sec .s{text-align:center;color:var(--dim);font-size:.78rem;margin-bottom:16px;font-style:italic}
 
-/* Knowledge cards — Dharma / Vishvarupa / Awareness */
+/* Knowledge cards */
 #dharma .card,
 #vishvarupa .card,
 #awareness .card{
@@ -100,6 +100,39 @@ audio{width:100%;max-width:320px;height:36px;margin-top:8px;border-radius:6px}
   box-shadow:0 4px 24px rgba(201,168,76,.08);
 }
 
+/* PDF VIEWER */
+.pdf-box{
+  margin-top:14px;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(201,168,76,.3);
+  background:#111;
+}
+.pdf-box iframe{
+  width:100%;
+  height:min(70vh,560px);
+  border:0;
+  display:block;
+  background:#1a1a1a;
+}
+.pdf-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+.pdf-actions a{
+  display:inline-block;
+  padding:10px 16px;
+  border:1px solid rgba(201,168,76,.45);
+  border-radius:8px;
+  color:var(--gold);
+  font-size:.8rem;
+  background:rgba(201,168,76,.1);
+  font-weight:600;
+}
+.pdf-actions a:hover{background:rgba(201,168,76,.2)}
+
 /* TRIDEV */
 .tc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 14px;margin-bottom:12px;text-align:center}
 .tc.s{border-top:3px solid #4a90d9}
@@ -114,24 +147,6 @@ audio{width:100%;max-width:320px;height:36px;margin-top:8px;border-radius:6px}
 .tc .d{color:var(--muted);font-size:.84rem;line-height:1.55;text-align:left}
 .tc .m{margin-top:8px;padding:8px;background:rgba(201,168,76,.07);border-radius:8px;color:var(--gold);font-size:.8rem;font-style:italic}
 
-/* DASHAVATAR */
-.av{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.av .card{background:var(--card);border:1px solid var(--border);border-radius:12px;text-align:center;padding:12px 8px}
-.av .ic{font-size:1.45rem}
-.av .nm{color:var(--gold);font-size:.8rem;font-weight:600}
-.av .ds{color:var(--dim);font-size:.68rem;margin-top:3px;line-height:1.35}
-
-/* VEDAS */
-.veda{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px}
-.veda .toprow{display:flex;align-items:center;gap:10px}
-.veda .icon{font-size:1.5rem;width:36px;text-align:center}
-.veda .t{color:var(--gold);font-size:.95rem;font-weight:700}
-.veda .d{color:var(--muted);font-size:.82rem;padding-left:46px;margin-top:4px}
-.veda .sa{color:#ff9500;font-size:.76rem;font-style:italic;padding-left:46px}
-.veda .read,.bk .read{display:inline-block;margin:8px 0 0 46px;padding:6px 12px;border:1px solid rgba(201,168,76,.4);border-radius:6px;color:var(--gold);font-size:.7rem;background:rgba(201,168,76,.07);transition:background .15s}
-.veda .read:hover,.bk .read:hover{background:rgba(201,168,76,.18)}
-.bk .read{margin-left:0}
-
 /* BOOKS */
 .bk{display:flex;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px;min-height:148px}
 .bk .coverimg{width:100px;min-width:100px;height:148px;object-fit:cover;flex-shrink:0}
@@ -139,13 +154,7 @@ audio{width:100%;max-width:320px;height:36px;margin-top:8px;border-radius:6px}
 .bk .t{color:var(--gold);font-size:.92rem;font-weight:700}
 .bk .d{color:var(--muted);font-size:.8rem;line-height:1.4;flex:1}
 .bk .verse{margin-top:6px;padding:5px 8px;background:rgba(201,168,76,.06);border-radius:5px;color:#ff9500;font-size:.72rem;font-style:italic}
-
-/* GENERIC CARDS */
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:8px}
-.card .t{color:var(--gold);font-size:.88rem;font-weight:600}
-.card .d{color:var(--muted);font-size:.78rem;line-height:1.4}
-.grid2 .card{margin:0}
+.bk .read{display:inline-block;margin-top:8px;padding:6px 12px;border:1px solid rgba(201,168,76,.4);border-radius:6px;color:var(--gold);font-size:.7rem;background:rgba(201,168,76,.07)}
 
 /* MANTRAS */
 .mb{background:rgba(201,168,76,.04);border-left:3px solid var(--gold);padding:12px 14px;margin-bottom:10px;border-radius:0 10px 10px 0}
@@ -153,29 +162,13 @@ audio{width:100%;max-width:320px;height:36px;margin-top:8px;border-radius:6px}
 .mb .k{color:#ff9500;font-size:.9rem;line-height:1.5}
 .mb .tr{color:var(--dim);font-size:.76rem;margin-top:3px}
 
-/* CALENDAR */
-.cal{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px}
-.cal .mon{color:var(--gold);font-size:.84rem;font-weight:700;margin-bottom:4px}
-.cal .ev{color:var(--muted);font-size:.8rem;padding:4px 0;border-bottom:1px solid var(--border)}
-.cal .ev:last-child{border:0}
-
-/* NEPAL */
-.nc{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:12px}
-.nc img{width:100%;height:150px;object-fit:cover}
-.nc .bd{padding:12px}
-.nc .t{color:var(--gold);font-size:.92rem;font-weight:600}
-.nc .d{color:var(--muted);font-size:.8rem}
-
 /* CONTACT */
-.contact a{display:block;padding:12px;margin-bottom:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;text-align:center;font-size:.86rem;transition:background .15s}
-.contact a:hover{background:rgba(201,168,76,.08)}
+.contact a{display:block;padding:12px;margin-bottom:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;text-align:center;font-size:.86rem}
 
 /* FOOTER */
 .ft{background:var(--bg3);padding:28px 16px 100px;text-align:center;border-top:1px solid var(--border)}
 .ft img{width:48px;height:48px;border-radius:50%;margin:0 auto 8px;border:2px solid rgba(201,168,76,.28);object-fit:cover}
 .ft .t{color:var(--gold);font-size:1rem;font-weight:700}
-.ft .tag{color:var(--dim);font-size:.74rem;margin:4px 0 10px}
-.ft a{display:inline-block;color:var(--dim);font-size:.66rem;margin:2px;padding:5px 10px;border:1px solid var(--border);border-radius:5px}
 
 /* BOTTOM NAV */
 .bn{position:fixed;bottom:0;left:0;right:0;background:var(--navbg);border-top:1px solid rgba(201,168,76,.28);display:flex;z-index:50;padding-bottom:env(safe-area-inset-bottom,0);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
@@ -197,11 +190,9 @@ html[lang=en] .block-en{display:block}
 
 @media (min-width:640px){
   :root{--max:680px}
-  .av{grid-template-columns:repeat(3,1fr)}
-  .av .card:nth-child(10){grid-column:2}
-  .nc img{height:180px}
   .langbar button,.theme-btn{font-size:.62rem;padding:7px 10px}
   #dharma .card .d,#vishvarupa .card .d,#awareness .card .d{font-size:.9rem}
+  .pdf-box iframe{height:min(75vh,640px)}
 }
 
 @media (min-width:900px){
@@ -224,14 +215,8 @@ html[lang=en] .block-en{display:block}
   .tc{margin-bottom:0;height:100%}
   .tc .photo{width:130px;height:130px}
 
-  .av{grid-template-columns:repeat(5,1fr)}
-  .av .card:nth-child(10){grid-column:auto}
-
   .bk{min-height:160px}
   .bk .coverimg{width:110px;min-width:110px;height:160px}
-
-  .nc{display:grid;grid-template-columns:1fr 1.2fr;align-items:center}
-  .nc img{height:100%;min-height:160px;object-fit:cover}
 
   .contact{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .contact a{margin:0}
@@ -242,6 +227,7 @@ html[lang=en] .block-en{display:block}
   .bn a{font-size:.6rem;padding:10px 4px 8px}
   .bn .i{font-size:1.2rem}
   .ft{padding-bottom:110px}
+  .pdf-box iframe{height:min(80vh,720px)}
 }
 
 @media (min-width:1200px){
