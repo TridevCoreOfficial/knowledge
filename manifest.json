@@ -1,0 +1,25 @@
+{
+  "name": "TRIDEV CORE HQ — सनातन ज्ञान पोर्टल",
+  "short_name": "TRIDEV CORE",
+  "description": "World's Sanatan Dharma knowledge portal. Vedas, Gita, Puranas, Mantras.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "orientation": "portrait-primary",
+  "lang": "ne",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
