@@ -4,22 +4,31 @@
 (function () {
   var html = document.documentElement;
   var btns = document.querySelectorAll(".langbar button");
+  var placeholders = {
+    ne: "खोज्नुहोस्... गीता, शिव, वेद",
+    hi: "खोजें... गीता, शिव, वेद",
+    sa: "अन्वेषणम्... गीता शिव वेद",
+    en: "Search... Gita, Shiva, Veda"
+  };
 
-  // --- Language ---
   function setLang(l) {
     html.setAttribute("lang", l);
     btns.forEach(function (b) {
       b.classList.toggle("on", b.getAttribute("data-set") === l);
     });
+    var q = document.getElementById("q");
+    if (q && placeholders[l]) q.placeholder = placeholders[l];
     try {
       localStorage.setItem("tridev-lang", l);
     } catch (e) {}
   }
+
   btns.forEach(function (b) {
     b.addEventListener("click", function () {
       setLang(b.getAttribute("data-set"));
     });
   });
+
   var saved = null;
   try {
     saved = localStorage.getItem("tridev-lang");
@@ -27,7 +36,7 @@
   if (saved && ["ne", "hi", "sa", "en"].indexOf(saved) >= 0) setLang(saved);
   else setLang("ne");
 
-  // --- Theme (dark / light) ---
+  // Theme
   var themeBtn = document.getElementById("themeBtn");
   function setTheme(t) {
     html.setAttribute("data-theme", t);
@@ -49,7 +58,7 @@
   } catch (e) {}
   setTheme(ts === "light" ? "light" : "dark");
 
-  // --- Search ---
+  // Search
   var q = document.getElementById("q");
   var secs = document.querySelectorAll(".sec[data-keys]");
   if (q) {
@@ -58,15 +67,11 @@
       secs.forEach(function (s) {
         var keys =
           (s.getAttribute("data-keys") || "") + " " + (s.textContent || "");
-        s.classList.toggle(
-          "hidden",
-          v && keys.toLowerCase().indexOf(v) < 0
-        );
+        s.classList.toggle("hidden", v && keys.toLowerCase().indexOf(v) < 0);
       });
     });
   }
 
-  // --- PWA Service Worker ---
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./sw.js").catch(function () {});
   }
