@@ -18,85 +18,11 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="TRIDEV CORE">
-<style>
-:root{--bg:#0a0a0a;--bg2:#121014;--bg3:#080608;--text:#f0d080;--gold:#c9a84c;--muted:rgba(232,213,176,.75);--dim:rgba(232,213,176,.42);--border:rgba(201,168,76,.14);--card:#121014;--topbg:rgba(10,10,10,.97);--navbg:rgba(10,8,10,.98);--inputbg:rgba(20,16,22,.9)}
-[data-theme=light]{--bg:#f7f0e4;--bg2:#fff;--bg3:#efe6d4;--text:#3a2a10;--gold:#8b6914;--muted:#5a4a30;--dim:#8a7a60;--border:rgba(139,105,20,.25);--card:#fff;--topbg:rgba(247,240,228,.97);--navbg:rgba(247,240,228,.98);--inputbg:#fff}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,'Noto Sans Devanagari',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}a{color:var(--gold);text-decoration:none}
-audio{width:100%;max-width:280px;height:34px;margin-top:8px;border-radius:6px}
-.top{background:var(--topbg);padding:10px 12px;border-bottom:1px solid rgba(201,168,76,.35);position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.top img{width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0}
-.top b{color:var(--gold);font-size:.8rem;letter-spacing:.5px;flex:1;white-space:nowrap}
-.langbar{display:flex;gap:3px}.langbar button,.theme-btn{font-size:.55rem;padding:5px 6px;border:1px solid rgba(201,168,76,.3);border-radius:5px;background:transparent;color:var(--dim);cursor:pointer;font-family:inherit;line-height:1}
-.langbar button.on{background:rgba(201,168,76,.22);color:var(--gold);border-color:var(--gold)}
-.hero{padding:26px 16px;text-align:center}
-.hero .logo{width:100px;height:100px;border-radius:50%;margin:0 auto 10px;border:2px solid rgba(201,168,76,.45);object-fit:cover;box-shadow:0 0 28px rgba(100,50,255,.25)}
-.hero h1{font-size:clamp(1.35rem,5vw,1.9rem);color:var(--text);margin:2px 0;font-weight:800}
-.hero .sub{color:var(--gold);font-size:.68rem;letter-spacing:2px;margin-bottom:6px}
-.hero .banner{width:100%;max-width:320px;margin:4px auto 8px}
-.hero .tag{color:var(--muted);font-size:.85rem;line-height:1.55;margin:0 0 10px}
-.hero .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
-.hero .btns a{padding:6px 12px;border:1px solid rgba(201,168,76,.45);color:var(--gold);font-size:.66rem;border-radius:6px;background:rgba(201,168,76,.06)}
-.search{max-width:300px;margin:12px auto 0;position:relative}
-.search input{width:100%;padding:9px 12px 9px 34px;border:1px solid rgba(201,168,76,.3);border-radius:8px;background:var(--inputbg);color:var(--text);font-size:.82rem;font-family:inherit;outline:none}
-.search::before{content:"🔍";position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:.8rem;opacity:.55}
-.sec{padding:22px 14px 6px;border-top:1px solid var(--border)}
-.sec h2{color:var(--gold);font-size:clamp(1rem,4vw,1.22rem);text-align:center;margin-bottom:3px;font-weight:700}
-.sec .s{text-align:center;color:var(--dim);font-size:.76rem;margin-bottom:14px;font-style:italic}
-.tc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 12px;margin-bottom:10px;text-align:center}
-.tc.s{border-top:3px solid #4a90d9}.tc.v{border-top:3px solid #27ae60}.tc.b{border-top:3px solid #e74c3c}
-.tc .photo{width:110px;height:110px;border-radius:50%;margin:0 auto 8px;object-fit:cover;border:2px solid rgba(201,168,76,.35)}
-.tc .n{font-size:1rem;font-weight:700}.tc.s .n{color:#5ba3e8}.tc.v .n{color:#3ecf7a}.tc.b .n{color:#f06050}
-.tc .k{color:#ff9500;margin-bottom:4px;font-size:.82rem}
-.tc .d{color:var(--muted);font-size:.8rem;line-height:1.5;text-align:left}
-.tc .m{margin-top:6px;padding:7px;background:rgba(201,168,76,.07);border-radius:6px;color:var(--gold);font-size:.78rem;font-style:italic}
-.av{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.av .card{background:var(--card);border:1px solid var(--border);border-radius:10px;text-align:center;padding:10px 6px}
-.av .ic{font-size:1.35rem}.av .nm{color:var(--gold);font-size:.76rem;font-weight:600}.av .ds{color:var(--dim);font-size:.65rem;margin-top:2px;line-height:1.3}
-.veda{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:8px}
-.veda .toprow{display:flex;align-items:center;gap:8px}.veda .icon{font-size:1.4rem;width:32px;text-align:center}
-.veda .t{color:var(--gold);font-size:.9rem;font-weight:700}
-.veda .d{color:var(--muted);font-size:.78rem;padding-left:40px;margin-top:4px}
-.veda .sa{color:#ff9500;font-size:.74rem;font-style:italic;padding-left:40px}
-.veda .read,.bk .read{display:inline-block;margin:6px 0 0 40px;padding:4px 10px;border:1px solid rgba(201,168,76,.4);border-radius:5px;color:var(--gold);font-size:.66rem;background:rgba(201,168,76,.07)}
-.bk .read{margin-left:0}
-.bk{display:flex;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:10px;min-height:140px}
-.bk .coverimg{width:95px;min-width:95px;height:140px;object-fit:cover;flex-shrink:0}
-.bk .info{padding:10px;flex:1;display:flex;flex-direction:column;min-width:0}
-.bk .t{color:var(--gold);font-size:.88rem;font-weight:700}
-.bk .d{color:var(--muted);font-size:.76rem;line-height:1.35;flex:1}
-.bk .verse{margin-top:4px;padding:4px 6px;background:rgba(201,168,76,.06);border-radius:4px;color:#ff9500;font-size:.7rem;font-style:italic}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px;margin-bottom:8px}
-.card .t{color:var(--gold);font-size:.85rem;font-weight:600}.card .d{color:var(--muted);font-size:.76rem;line-height:1.35}
-.grid2 .card{margin:0}
-.mb{background:rgba(201,168,76,.04);border-left:3px solid var(--gold);padding:11px 12px;margin-bottom:8px;border-radius:0 8px 8px 0}
-.mb .l{color:var(--gold);font-size:.55rem;letter-spacing:1px;margin-bottom:2px;text-transform:uppercase}
-.mb .k{color:#ff9500;font-size:.86rem;line-height:1.45}.mb .tr{color:var(--dim);font-size:.74rem;margin-top:2px}
-.cal{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:8px}
-.cal .mon{color:var(--gold);font-size:.8rem;font-weight:700;margin-bottom:4px}
-.cal .ev{color:var(--muted);font-size:.76rem;padding:3px 0;border-bottom:1px solid var(--border)}
-.cal .ev:last-child{border:0}
-.nc{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:10px}
-.nc img{width:100%;height:130px;object-fit:cover}.nc .bd{padding:11px}.nc .t{color:var(--gold);font-size:.88rem;font-weight:600}.nc .d{color:var(--muted);font-size:.78rem}
-.contact a{display:block;padding:10px;margin-bottom:6px;background:var(--card);border:1px solid var(--border);border-radius:8px;text-align:center;font-size:.82rem}
-.ft{background:var(--bg3);padding:24px 14px 90px;text-align:center;border-top:1px solid var(--border)}
-.ft img{width:44px;height:44px;border-radius:50%;margin:0 auto 6px;border:2px solid rgba(201,168,76,.28);object-fit:cover}
-.ft .t{color:var(--gold);font-size:.95rem;font-weight:700}.ft .tag{color:var(--dim);font-size:.72rem;margin:2px 0 8px}
-.ft a{display:inline-block;color:var(--dim);font-size:.64rem;margin:2px;padding:4px 8px;border:1px solid var(--border);border-radius:4px}
-.bn{position:fixed;bottom:0;left:0;right:0;background:var(--navbg);border-top:1px solid rgba(201,168,76,.28);display:flex;z-index:50;padding-bottom:env(safe-area-inset-bottom,0)}
-.bn a{flex:1;text-align:center;padding:7px 1px 5px;color:var(--muted);font-size:.52rem;line-height:1.1;min-width:0}
-.bn .i{display:block;font-size:1rem;margin-bottom:1px}
-[data-l]{display:none}
-html[lang=ne] [data-l=ne],html[lang=hi] [data-l=hi],html[lang=sa] [data-l=sa],html[lang=en] [data-l=en]{display:inline}
-html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lang=en] .block-en{display:block}
-.block-ne,.block-hi,.block-sa,.block-en{display:none}
-.sec.hidden{display:none!important}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- ========== TOP BAR ========== -->
 <div class="top">
 <img src="images/logo.png" width="28" height="28" alt="Logo">
 <b>TRIDEV CORE HQ</b>
@@ -109,6 +35,7 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 </div>
 </div>
 
+<!-- ========== HERO ========== -->
 <header class="hero">
 <img class="logo" src="images/logo.png" width="100" height="100" alt="Tridev Core HQ">
 <h1>TRIDEV CORE HQ</h1>
@@ -124,6 +51,7 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 <div class="search"><input type="search" id="q" placeholder="खोज्नुहोस् / Search..." autocomplete="off"></div>
 </header>
 
+<!-- ========== TRIDEV ========== -->
 <section class="sec" id="tridev" data-keys="tridev shiva vishnu brahma शिव विष्णु ब्रह्मा">
 <h2>🔱 <span data-l="ne">त्रिदेव</span><span data-l="hi">त्रिदेव</span><span data-l="sa">त्रिदेवाः</span><span data-l="en">Holy Trinity</span></h2>
 <p class="s">ब्रह्मा • विष्णु • महेश</p>
@@ -132,6 +60,7 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 <article class="tc b"><img class="photo" src="https://iili.io/CiwUPSa.webp" width="110" height="110" alt="Brahma" loading="lazy"><div class="n">BRAHMA — ब्रह्मा</div><div class="k">विधाता • स्रष्टा</div><div class="d"><span class="block-ne">सृष्टिकर्ता। चार मुख = चार वेद।</span><span class="block-hi">सृष्टिकर्ता। चार मुख = चार वेद।</span><span class="block-sa">स्रष्टा। चतुर्मुखः।</span><span class="block-en">Creator. Four faces = Four Vedas.</span></div><div class="m">ॐ ब्रह्मणे नमः</div></article>
 </section>
 
+<!-- ========== DASHAVATAR ========== -->
 <section class="sec" id="avatar" data-keys="dashavatar avatar matsya kurma varaha राम कृष्ण">
 <h2>🌊 <span data-l="ne">दशावतार</span><span data-l="hi">दशावतार</span><span data-l="sa">दशावताराः</span><span data-l="en">Dashavatar</span></h2>
 <p class="s"><span data-l="ne">विष्णुका दश अवतार — छोटो कथा</span><span data-l="en">Ten incarnations with short stories</span></p>
@@ -149,6 +78,7 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 </div>
 </section>
 
+<!-- ========== VEDAS ========== -->
 <section class="sec" id="vedas" data-keys="veda ऋग्वेद सामवेद यजुर्वेद अथर्ववेद">
 <h2>📜 <span data-l="ne">चतुर्वेद</span><span data-l="en">Four Vedas</span></h2>
 <p class="s">श्रुति — Full text</p>
@@ -158,6 +88,7 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 <div class="veda"><div class="toprow"><span class="icon">🌿</span><div class="t">अथर्ववेद</div></div><div class="d">Healing, Ayurveda, protection.</div><a class="read" href="https://www.sacred-texts.com/hin/av/index.htm" target="_blank" rel="noopener">📖 Read Full</a></div>
 </section>
 
+<!-- ========== BOOKS ========== -->
 <section class="sec" id="books" data-keys="gita ramayana mahabharata गीता रामायण महाभारत">
 <h2>📚 <span data-l="ne">पवित्र ग्रन्थ</span><span data-l="en">Sacred Books</span></h2>
 <p class="s">Full text • Premium covers</p>
@@ -168,6 +99,7 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 <div class="bk"><img class="coverimg" src="https://iili.io/CiNTqhX.webp" width="95" height="140" alt="Bhagavata" loading="lazy"><div class="info"><div class="t">भागवत पुराण</div><div class="d">श्रीकृष्णको लीला। १८,००० श्लोक।</div><a class="read" href="https://www.sacred-texts.com/hin/sbe08/index.htm" target="_blank" rel="noopener">📖 Read Full</a></div></div>
 </section>
 
+<!-- ========== MANTRAS ========== -->
 <section class="sec" id="mantras" data-keys="mantra gayatri hanuman chalisa vishnu मन्त्र">
 <h2>🕉 <span data-l="ne">पवित्र मन्त्र + Audio</span><span data-l="en">Mantras + Audio</span></h2>
 <p class="s">सुन्नुहोस् र जप गर्नुहोस्</p>
@@ -178,6 +110,7 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 <div class="mb"><div class="l">विष्णु सहस्रनाम</div><div class="k">विष्णुको सहस्र नाम…</div><div class="tr">१००० नाम — कल्याण</div><audio controls preload="none" src="https://archive.org/download/VishnuSahasranamam/02VishnuSahasranamam.ogg"></audio></div>
 </section>
 
+<!-- ========== CALENDAR ========== -->
 <section class="sec" id="calendar" data-keys="calendar festival पर्व 2026">
 <h2>📅 <span data-l="ne">पर्व क्यालेन्डर २०२६</span><span data-l="en">Festival Calendar 2026</span></h2>
 <p class="s">मुख्य सनातन पर्व (अनुमानित)</p>
@@ -189,12 +122,14 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 <div class="cal"><div class="mon">🪔 अक्टोबर / नोभेम्बर</div><div class="ev">दीपावली — उज्यालोको पर्व</div></div>
 </section>
 
+<!-- ========== YOGA ========== -->
 <section class="sec" id="yoga" data-keys="yoga योग">
 <h2>🧘 <span data-l="ne">योग मार्ग</span><span data-l="en">Path of Yoga</span></h2>
 <div class="card"><div class="t">अष्टाङ्ग योग</div><div class="d">यम • नियम • आसन • प्राणायाम • प्रत्याहार • धारणा • ध्यान • समाधि</div></div>
 <div class="card"><div class="t">कर्म / भक्ति / ज्ञान योग</div><div class="d">निष्काम कर्म • शुद्ध भक्ति • आत्मा = ब्रह्म</div></div>
 </section>
 
+<!-- ========== NEPAL ========== -->
 <section class="sec" id="nepal" data-keys="nepal pashupatinath नेपाल">
 <h2>🇳🇵 <span data-l="ne">नेपाल — पवित्र भूमि</span><span data-l="en">Nepal — Sacred Land</span></h2>
 <article class="nc"><img src="images/Pashupatinath.webp" width="600" height="400" alt="Pashupatinath" loading="lazy"><div class="bd"><div class="t">पशुपतिनाथ</div><div class="d">UNESCO • काठमाडौं — सबैभन्दा पवित्र शिव मन्दिर</div></div></article>
@@ -202,6 +137,7 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 <article class="nc"><img src="images/everest.jfif" width="600" height="400" alt="Everest" loading="lazy"><div class="bd"><div class="t">सगरमाथा</div><div class="d">विश्वको सर्वोच्च शिखर — नेपालको गौरव</div></div></article>
 </section>
 
+<!-- ========== CONTACT ========== -->
 <section class="sec" id="contact" data-keys="contact donate connect सम्पर्क">
 <h2>📬 <span data-l="ne">सम्पर्क / Connect</span><span data-l="en">Contact / Connect</span></h2>
 <p class="s">TRIDEV CORE HQ</p>
@@ -215,6 +151,7 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 <p style="text-align:center;margin-top:12px;color:var(--dim);font-size:.75rem">Support via YouTube Super Thanks / subscribe 🙏</p>
 </section>
 
+<!-- ========== FOOTER ========== -->
 <footer class="ft">
 <img src="images/logo.png" width="44" height="44" alt="Logo">
 <div class="t">TRIDEV CORE HQ</div>
@@ -223,6 +160,7 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 <div style="color:var(--dim);font-size:.65rem;margin-top:4px">© TRIDEV CORE HQ | Gaurab Barakoti</div>
 </footer>
 
+<!-- ========== BOTTOM NAV ========== -->
 <nav class="bn">
 <a href="#tridev"><span class="i">🔱</span><span data-l="ne">त्रिदेव</span><span data-l="en">Trinity</span></a>
 <a href="#vedas"><span class="i">📜</span><span data-l="ne">वेद</span><span data-l="en">Vedas</span></a>
@@ -231,23 +169,6 @@ html[lang=ne] .block-ne,html[lang=hi] .block-hi,html[lang=sa] .block-sa,html[lan
 <a href="#contact"><span class="i">📬</span><span data-l="ne">सम्पर्क</span><span data-l="en">Connect</span></a>
 </nav>
 
-<script>
-(function(){
-var html=document.documentElement,btns=document.querySelectorAll('.langbar button');
-function setLang(l){html.setAttribute('lang',l);btns.forEach(function(b){b.classList.toggle('on',b.getAttribute('data-set')===l)});try{localStorage.setItem('tridev-lang',l)}catch(e){}}
-btns.forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-set'))})});
-var saved=null;try{saved=localStorage.getItem('tridev-lang')}catch(e){}
-if(saved&&['ne','hi','sa','en'].indexOf(saved)>=0)setLang(saved);else setLang('ne');
-var themeBtn=document.getElementById('themeBtn');
-function setTheme(t){html.setAttribute('data-theme',t);themeBtn.textContent=t==='dark'?'🌙':'☀️';try{localStorage.setItem('tridev-theme',t)}catch(e){}
-var m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='dark'?'#0a0a0a':'#f7f0e4'}
-themeBtn.addEventListener('click',function(){setTheme(html.getAttribute('data-theme')==='dark'?'light':'dark')});
-var ts=null;try{ts=localStorage.getItem('tridev-theme')}catch(e){}
-setTheme(ts==='light'?'light':'dark');
-var q=document.getElementById('q'),secs=document.querySelectorAll('.sec[data-keys]');
-if(q){q.addEventListener('input',function(){var v=(q.value||'').toLowerCase().trim();secs.forEach(function(s){var keys=(s.getAttribute('data-keys')||'')+' '+(s.textContent||'');s.classList.toggle('hidden',v&&keys.toLowerCase().indexOf(v)<0)})})}
-if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(function(){})}
-})();
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
