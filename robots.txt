@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tridevcoreofficial.github.io/knowledge/sitemap.xml
