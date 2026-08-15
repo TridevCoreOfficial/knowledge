@@ -1,5 +1,5 @@
-/* TRIDEV CORE HQ — Main JS final
-   Language, theme, search, active nav, PWA
+/* TRIDEV CORE HQ — Main JS final + perf
+   Language, theme, search, active nav, lazy PDF, PWA
 */
 (function () {
   var html = document.documentElement;
@@ -32,7 +32,6 @@
   if (saved && ["ne", "hi", "sa", "en"].indexOf(saved) >= 0) setLang(saved);
   else setLang("ne");
 
-  // Theme
   var themeBtn = document.getElementById("themeBtn");
   function setTheme(t) {
     html.setAttribute("data-theme", t);
@@ -50,7 +49,6 @@
   try { ts = localStorage.getItem("tridev-theme"); } catch (e) {}
   setTheme(ts === "light" ? "light" : "dark");
 
-  // Search
   var q = document.getElementById("q");
   var secs = document.querySelectorAll(".sec[data-keys]");
   if (q) {
@@ -63,7 +61,6 @@
     });
   }
 
-  // Active bottom nav on scroll
   var navLinks = document.querySelectorAll(".bn a");
   var sections = [];
   navLinks.forEach(function (a) {
@@ -82,6 +79,23 @@
   }
   window.addEventListener("scroll", updateNav, { passive: true });
   updateNav();
+
+  // Lazy-load PDF only when near viewport (saves 12MB on first paint)
+  var pdfFrame = document.querySelector(".pdf-box iframe[data-src]");
+  if (pdfFrame && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          pdfFrame.src = pdfFrame.getAttribute("data-src");
+          pdfFrame.removeAttribute("data-src");
+          io.disconnect();
+        }
+      });
+    }, { rootMargin: "200px" });
+    io.observe(pdfFrame);
+  } else if (pdfFrame) {
+    pdfFrame.src = pdfFrame.getAttribute("data-src") || pdfFrame.src;
+  }
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./sw.js").catch(function () {});
