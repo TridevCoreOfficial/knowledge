@@ -1,1 +1,188 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRIDEV CORE HQ — Sanatan Knowledge Portal</title>
+<meta name="description" content="TRIDEV CORE HQ — Vedas, sacred books, mantras, Tridev and Nepal holy places. Fearless Voice of Nepal.">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="author" content="Gaurab Barakoti">
+<meta property="og:title" content="TRIDEV CORE HQ">
+<meta property="og:description" content="Sanatan Knowledge Portal — Fearless Voice of Nepal">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tridevcoreofficial.github.io/knowledge/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#0a0a0a;color:#f0d080;font-family:system-ui,-apple-system,sans-serif;line-height:1.5}
+img{max-width:100%;height:auto;display:block}
+a{color:#c9a84c}
+.top{background:#0a0a0a;padding:12px 16px;border-bottom:1px solid rgba(201,168,76,.4);position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px}
+.top .mark{width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#4af,#f40 60%,#80f);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.top b{color:#c9a84c;font-size:.95rem;letter-spacing:1px}
+.hero{padding:40px 18px 44px;text-align:center}
+.hero .logo-ring{width:110px;height:110px;border-radius:50%;margin:0 auto 14px;background:radial-gradient(circle at 40% 30%,#5bf 0%,#f50 45%,#a0f 100%);display:flex;align-items:center;justify-content:center;border:2px solid rgba(201,168,76,.5);box-shadow:0 0 30px rgba(100,50,255,.35)}
+.hero .logo-ring span{font-size:3.2rem;filter:drop-shadow(0 0 8px #fff)}
+.hero h1{font-size:clamp(1.7rem,5.5vw,2.3rem);color:#f0d080;margin:8px 0;font-weight:800;letter-spacing:1px}
+.hero .sub{color:#c9a84c;font-size:.78rem;letter-spacing:3px;margin-bottom:14px;text-transform:uppercase}
+.hero .metal{font-size:clamp(1.1rem,4vw,1.6rem);font-weight:900;letter-spacing:2px;background:linear-gradient(90deg,#4af,#f0d080,#f50);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0 14px}
+.hero .tag{color:#d4c4a0;font-size:.95rem;line-height:1.75;margin:0 0 18px}
+.hero .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.hero .btns a{display:inline-block;padding:9px 15px;border:1px solid rgba(201,168,76,.5);color:#c9a84c;text-decoration:none;font-size:.72rem;border-radius:4px;background:rgba(201,168,76,.06)}
+.sec{padding:28px 16px;border-top:1px solid rgba(201,168,76,.12)}
+.sec h2{color:#c9a84c;font-size:clamp(1.1rem,4vw,1.35rem);text-align:center;margin-bottom:6px}
+.sec .s{text-align:center;color:rgba(232,213,176,.5);font-size:.85rem;margin-bottom:16px;font-style:italic}
+.tc{background:#141016;border:1px solid rgba(201,168,76,.15);border-radius:10px;padding:20px 16px;margin-bottom:12px;text-align:center}
+.tc.s{border-top:3px solid #4a90d9}
+.tc.v{border-top:3px solid #27ae60}
+.tc.b{border-top:3px solid #e74c3c}
+.tc .ic{font-size:2.2rem;margin-bottom:4px}
+.tc .n{font-size:1.15rem;margin:4px 0;font-weight:700}
+.tc.s .n{color:#5ba3e8}
+.tc.v .n{color:#3ecf7a}
+.tc.b .n{color:#f06050}
+.tc .k{color:#ff9500;margin-bottom:6px;font-size:.92rem}
+.tc .d{color:rgba(232,213,176,.8);font-size:.88rem;line-height:1.6}
+.tc .m{margin-top:10px;padding:9px;background:rgba(201,168,76,.08);border-radius:6px;color:#c9a84c;font-size:.85rem;font-style:italic}
+.card{background:#141016;border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:14px;margin-bottom:10px}
+.card .t{color:#c9a84c;font-size:.95rem;margin-bottom:4px;font-weight:600}
+.card .d{color:rgba(232,213,176,.75);font-size:.86rem;line-height:1.5}
+.mb{background:rgba(201,168,76,.05);border-left:3px solid #c9a84c;padding:12px 14px;margin-bottom:10px;border-radius:0 6px 6px 0}
+.mb .l{color:#c9a84c;font-size:.65rem;letter-spacing:1px;margin-bottom:4px;text-transform:uppercase}
+.mb .k{color:#ff9500;font-size:.98rem;line-height:1.65}
+.nc{background:#141016;border:1px solid rgba(201,168,76,.15);border-radius:10px;overflow:hidden;margin-bottom:12px}
+.nc img{width:100%;height:160px;object-fit:cover}
+.nc .bd{padding:12px}
+.nc .t{color:#c9a84c;font-size:.92rem;font-weight:600;margin-bottom:3px}
+.nc .d{color:rgba(232,213,176,.7);font-size:.85rem}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gal figure{margin:0;background:#141016;border-radius:8px;overflow:hidden;border:1px solid rgba(201,168,76,.12)}
+.gal img{width:100%;height:110px;object-fit:cover}
+.gal figcaption{padding:7px;color:#c9a84c;font-size:.7rem;text-align:center}
+.ft{background:#080608;padding:32px 16px 95px;text-align:center;border-top:1px solid rgba(201,168,76,.15)}
+.ft .mark{width:52px;height:52px;border-radius:50%;margin:0 auto 8px;background:radial-gradient(circle at 40% 35%,#4af,#f40 60%,#80f);display:flex;align-items:center;justify-content:center;font-size:1.6rem;border:2px solid rgba(201,168,76,.3)}
+.ft .t{color:#c9a84c;font-size:1.1rem;margin-bottom:3px;font-weight:700}
+.ft .tag{color:rgba(232,213,176,.4);font-size:.82rem;margin-bottom:12px}
+.ft a{display:inline-block;color:rgba(232,213,176,.55);text-decoration:none;font-size:.7rem;margin:3px 4px;padding:5px 10px;border:1px solid rgba(201,168,76,.12);border-radius:3px}
+.bn{position:fixed;bottom:0;left:0;right:0;background:rgba(10,8,10,.97);border-top:1px solid rgba(201,168,76,.3);display:flex;z-index:30;padding-bottom:env(safe-area-inset-bottom)}
+.bn a{flex:1;text-align:center;padding:9px 2px 7px;text-decoration:none;color:#e8d5b0;font-size:.58rem}
+.bn .i{display:block;font-size:1.15rem;margin-bottom:2px}
+</style>
+</head>
+<body>
+<div class="top"><div class="mark">🔱</div><b>TRIDEV CORE HQ</b></div>
+<header class="hero">
+<div class="logo-ring"><span>🔱</span></div>
+<h1>TRIDEV CORE HQ</h1>
+<div class="sub">Sanatan Knowledge Portal</div>
+<div class="metal">TRIDEV CORE HQ</div>
+<p class="tag">सनातन धर्म — The Eternal Truth<br>नेपालको आत्मा • Soul of Nepal</p>
+<div class="btns">
+<a href="https://youtube.com/@TridevCoreHQ" target="_blank" rel="noopener">YouTube</a>
+<a href="https://tiktok.com/@tridevcorehq" target="_blank" rel="noopener">TikTok</a>
+<a href="https://instagram.com/tridevcorehq" target="_blank" rel="noopener">Instagram</a>
+<a href="https://facebook.com/TridevCoreHQ" target="_blank" rel="noopener">Facebook</a>
+</div>
+<p style="margin-top:14px;color:rgba(232,213,176,.4);font-size:.82rem">🇳🇵 Born in Nepal • सत्यमेव जयते</p>
+</header>
+<section class="sec" id="tridev">
+<h2>🔱 The Holy Trinity — त्रिदेव</h2>
+<p class="s">ब्रह्मा विष्णु महेश</p>
+<article class="tc s">
+<div class="ic">⚡</div>
+<div class="n">SHIVA — शिव</div>
+<div class="k">महादेव</div>
+<div class="d">The Destroyer. Supreme consciousness.<br><b style="color:#c9a84c">नेपाली:</b> महादेव — सर्वशक्तिमान। पशुपतिनाथ नेपाल।</div>
+<div class="m">ॐ नमः शिवाय</div>
+</article>
+<article class="tc v">
+<div class="ic">🌊</div>
+<div class="n">VISHNU — विष्णु</div>
+<div class="k">नारायण</div>
+<div class="d">The Preserver. Ten avatars.<br><b style="color:#c9a84c">नेपाली:</b> विष्णु — पालनहार। मुक्तिनाथ।</div>
+<div class="m">ॐ नमो भगवते वासुदेवाय</div>
+</article>
+<article class="tc b">
+<div class="ic">🔥</div>
+<div class="n">BRAHMA — ब्रह्मा</div>
+<div class="k">विधाता</div>
+<div class="d">The Creator of the Universe.<br><b style="color:#c9a84c">नेपाली:</b> ब्रह्मा — सृष्टिकर्ता।</div>
+<div class="m">ॐ ब्रह्मणे नमः</div>
+</article>
+</section>
+<section class="sec" id="vedas">
+<h2>📜 The Four Vedas</h2>
+<p class="s">Oldest scriptures of humanity</p>
+<div class="card"><div class="t">🌅 Rigveda — ऋग्वेद</div><div class="d">Oldest Veda. 1,028 hymns.</div></div>
+<div class="card"><div class="t">🎵 Samaveda — सामवेद</div><div class="d">Veda of melodies.</div></div>
+<div class="card"><div class="t">⚔️ Yajurveda — यजुर्वेद</div><div class="d">Veda of rituals.</div></div>
+<div class="card"><div class="t">🌿 Atharvaveda — अथर्ववेद</div><div class="d">Everyday life & medicine.</div></div>
+</section>
+<section class="sec" id="books">
+<h2>📚 Sacred Books</h2>
+<p class="s">Read online</p>
+<div class="card"><div class="t">🌸 Bhagavad Gita</div><div class="d">700 verses by Krishna</div>
+<a href="https://www.holy-bhagavad-gita.org" target="_blank" rel="noopener" style="font-size:.82rem">📖 Read</a></div>
+<div class="card"><div class="t">🏹 Ramayana</div><div class="d">Valmiki's epic of dharma</div>
+<a href="https://www.valmikiramayan.net" target="_blank" rel="noopener" style="font-size:.82rem">📖 Read</a></div>
+<div class="card"><div class="t">⚡ Mahabharata</div><div class="d">World's longest epic</div>
+<a href="https://www.sacred-texts.com/hin/maha/index.htm" target="_blank" rel="noopener" style="font-size:.82rem">📖 Read</a></div>
+<div class="card"><div class="t">🌊 Shiva Purana</div><div class="d">Glory of Mahadev</div>
+<a href="https://www.sacred-texts.com/hin/index.htm" target="_blank" rel="noopener" style="font-size:.82rem">📖 Read</a></div>
+</section>
+<section class="sec" id="mantras">
+<h2>🕉 Sacred Mantras</h2>
+<div class="mb"><div class="l">Mahamrityunjaya</div><div class="k">ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ।</div></div>
+<div class="mb"><div class="l">Gayatri Mantra</div><div class="k">ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि।</div></div>
+<div class="mb"><div class="l">Om Namah Shivaya</div><div class="k">ॐ नमः शिवाय ।</div></div>
+</section>
+<section class="sec" id="nepal">
+<h2>🇳🇵 Nepal — Sacred Land</h2>
+<p class="s">पशुपतिनाथको भूमि</p>
+<article class="nc">
+<img src="images/Pashupatinath.webp" width="600" height="400" alt="Pashupatinath Temple Kathmandu" loading="lazy">
+<div class="bd"><div class="t">Pashupatinath Temple</div><div class="d">Most sacred Shiva temple. Kathmandu, Nepal.</div></div>
+</article>
+<article class="nc">
+<img src="images/Muktinath.jpg" width="600" height="400" alt="Muktinath Temple Mustang" loading="lazy">
+<div class="bd"><div class="t">Muktinath</div><div class="d">Sacred to Hindus & Buddhists. Mustang.</div></div>
+</article>
+<article class="nc">
+<img src="images/everest.jfif" width="600" height="400" alt="Sagarmatha Mount Everest" loading="lazy">
+<div class="bd"><div class="t">Sagarmatha — Everest</div><div class="d">Highest peak on Earth. Nepal.</div></div>
+</article>
+<article class="nc">
+<img src="images/kingdom.jpg" width="600" height="400" alt="Hindu Kingdom of Nepal" loading="lazy">
+<div class="bd"><div class="t">Hindu Kingdom</div><div class="d">World's only Hindu Kingdom once.</div></div>
+</article>
+</section>
+<section class="sec" id="gallery">
+<h2>📸 Gallery</h2>
+<div class="gal">
+<figure><img src="images/Pashupatinath.webp" alt="Pashupatinath" loading="lazy"><figcaption>Pashupatinath</figcaption></figure>
+<figure><img src="images/Muktinath.jpg" alt="Muktinath" loading="lazy"><figcaption>Muktinath</figcaption></figure>
+<figure><img src="images/everest.jfif" alt="Everest" loading="lazy"><figcaption>Sagarmatha</figcaption></figure>
+<figure><img src="images/kingdom.jpg" alt="Kingdom" loading="lazy"><figcaption>Hindu Kingdom</figcaption></figure>
+</div>
+</section>
+<footer class="ft">
+<div class="mark">🔱</div>
+<div class="t">TRIDEV CORE HQ</div>
+<div class="tag">Fearless Voice of Nepal</div>
+<div>
+<a href="https://youtube.com/@TridevCoreHQ" target="_blank" rel="noopener">YouTube</a>
+<a href="https://tiktok.com/@tridevcorehq" target="_blank" rel="noopener">TikTok</a>
+<a href="https://instagram.com/tridevcorehq" target="_blank" rel="noopener">Instagram</a>
+<a href="https://facebook.com/TridevCoreHQ" target="_blank" rel="noopener">Facebook</a>
+</div>
+<p style="color:#c9a84c;margin-top:14px;font-size:.88rem">🇳🇵 Jay Nepal | 🕉 Har Har Mahadev</p>
+<div style="color:rgba(232,213,176,.25);font-size:.7rem;margin-top:8px">© TRIDEV CORE HQ | Gaurab Barakoti</div>
+</footer>
+<nav class="bn">
+<a href="#tridev"><span class="i">🔱</span>Tridev</a>
+<a href="#vedas"><span class="i">📜</span>Vedas</a>
+<a href="#books"><span class="i">📚</span>Books</a>
+<a href="#mantras"><span class="i">🕉️</span>Mantras</a>
+<a href="#nepal"><span class="i">🇳🇵</span>Nepal</a>
+</nav>
+</body>
+</html>
