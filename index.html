@@ -6,10 +6,91 @@
 <title>TRIDEV CORE HQ — Sanatan Knowledge Portal</title>
 <meta name="description" content="TRIDEV CORE HQ — Sanatan Knowledge Portal. Vedas, mantras, Tridev, Nepal sacred places.">
 <meta name="theme-color" content="#080508">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style/style.css">
+<style>
+:root{--gold:#c9a84c;--gold-light:#f0d080;--saffron:#ff9500;--deep:#080508;--text:#e8d5b0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#080508;color:#e8d5b0;font-family:Georgia,serif;overflow-x:hidden}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:1001;background:#0a080a;border-top:1px solid rgba(201,168,76,.3);display:flex;justify-content:space-around;padding:10px 0 14px}
+.bottom-nav-link{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:#e8d5b0;font-size:.62rem;gap:3px;flex:1;text-align:center}
+.bnav-icon{font-size:1.3rem}
+.bnav-text{font-weight:600;text-transform:uppercase}
+@media(min-width:769px){.bottom-nav{display:none}}
+@media(max-width:768px){.scroll-top{bottom:80px!important}}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#0a080a;border-bottom:1px solid rgba(201,168,76,.25);padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{height:40px;width:40px;border-radius:50%;object-fit:cover}
+.nav-logo-text{font-size:.95rem;color:#c9a84c;letter-spacing:1px;font-weight:700}
+.nav-links{display:flex;gap:14px;list-style:none}
+.nav-links a{color:#e8d5b0;text-decoration:none;font-size:.7rem;letter-spacing:1px}
+@media(max-width:768px){.nav-links{display:none}}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 16px 80px;overflow:hidden}
+.hero-banner{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,5,8,.4),rgba(8,5,8,.85) 60%,#080508);z-index:1}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.12}
+.hero-content{position:relative;z-index:2;width:100%;max-width:700px}
+.logo-img{width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:14px;border:2px solid rgba(201,168,76,.4)}
+.hero-title{font-size:clamp(1.7rem,6vw,3rem);font-weight:900;color:#f0d080!important;-webkit-text-fill-color:#f0d080!important;margin-bottom:8px}
+.hero-sub{font-size:clamp(.75rem,2.5vw,1rem);color:#c9a84c;letter-spacing:3px;margin-bottom:10px}
+.divider{width:140px;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:10px auto}
+.hero-tagline{font-size:clamp(.88rem,2.5vw,1.1rem);color:#e8d5b0;line-height:1.75;font-style:italic;margin:0 auto 18px}
+.banner-img{width:100%;max-width:560px;margin:10px auto 18px;display:block}
+.social-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.social-btn{padding:8px 14px;border:1px solid rgba(201,168,76,.4);background:rgba(201,168,76,.1);color:#c9a84c;font-size:.65rem;text-decoration:none;border-radius:3px}
+.social-btn.yt{border-color:rgba(255,80,80,.45);color:#ff6666}
+.social-btn.tt{border-color:rgba(0,242,234,.35);color:#00f2ea}
+.social-btn.ig{border-color:rgba(225,48,108,.35);color:#e1306c}
+.social-btn.fb{border-color:rgba(24,119,242,.35);color:#1877f2}
+.section-wrap{position:relative;z-index:1;padding:45px 16px;max-width:1200px;margin:0 auto}
+.section-title{font-size:clamp(1.2rem,4vw,1.85rem);color:#c9a84c;text-align:center;margin-bottom:6px}
+.section-sub{text-align:center;font-style:italic;color:rgba(232,213,176,.55);margin-bottom:28px;font-size:.95rem}
+.full-bg{background:linear-gradient(180deg,transparent,rgba(201,168,76,.03),transparent);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1)}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{background:#120e12;border:1px solid rgba(201,168,76,.18);border-radius:6px;padding:20px 16px}
+.card-icon{font-size:1.9rem;margin-bottom:8px;display:block}
+.card-title{font-size:.92rem;color:#c9a84c;margin-bottom:4px}
+.card-desc{font-size:.86rem;color:rgba(232,213,176,.78);line-height:1.65}
+.book-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.book-card{background:#120e12;border:1px solid rgba(201,168,76,.18);border-radius:6px;padding:18px 14px;display:flex;flex-direction:column;gap:6px}
+.book-icon{font-size:2rem}
+.book-title{color:#c9a84c;font-size:.88rem}
+.book-desc{color:rgba(232,213,176,.72);font-size:.84rem;line-height:1.6;flex:1}
+.read-btn{display:inline-block;padding:7px 12px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.35);color:#c9a84c;font-size:.65rem;text-decoration:none;border-radius:3px;text-align:center}
+.tridev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.tcard{background:#120e12;border:1px solid rgba(201,168,76,.18);border-radius:8px;padding:24px 16px;text-align:center}
+.tcard.shiva{border-top:3px solid #4a90d9}
+.tcard.vishnu{border-top:3px solid #27ae60}
+.tcard.brahma{border-top:3px solid #e74c3c}
+.tcard-icon{font-size:2.6rem;margin-bottom:8px;display:block}
+.tcard-name{font-size:1.2rem;margin-bottom:4px}
+.tcard.shiva .tcard-name{color:#4a90d9}
+.tcard.vishnu .tcard-name{color:#27ae60}
+.tcard.brahma .tcard-name{color:#e74c3c}
+.tcard-skt{font-size:1.1rem;color:#ff9500;margin-bottom:8px}
+.tcard-desc{color:rgba(232,213,176,.78);line-height:1.7;font-size:.88rem}
+.tcard-mantra{margin-top:10px;padding:9px;background:rgba(201,168,76,.08);border-radius:4px;font-style:italic;color:#c9a84c;font-size:.82rem}
+.mantra-block{background:rgba(201,168,76,.06);border-left:3px solid #c9a84c;padding:16px 18px;margin-bottom:14px;border-radius:0 6px 6px 0}
+.mantra-lang{font-size:.62rem;letter-spacing:2px;color:#c9a84c;margin-bottom:5px;text-transform:uppercase}
+.mantra-skt{font-size:1.1rem;color:#ff9500;line-height:1.75}
+.nepal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.nepal-card{background:#120e12;border:1px solid rgba(139,26,26,.35);border-radius:8px;overflow:hidden}
+.nepal-card img{width:100%;height:170px;object-fit:cover;display:block}
+.nepal-card-body{padding:14px}
+.ni-title{color:#c9a84c;font-size:.92rem;margin-bottom:5px}
+.ni-text{color:rgba(232,213,176,.75);line-height:1.65;font-size:.86rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.gallery-item{background:#120e12;border:1px solid rgba(201,168,76,.2);border-radius:8px;overflow:hidden;text-align:center}
+.gallery-item img{width:100%;height:150px;object-fit:cover;display:block}
+.gallery-item figcaption{padding:9px 6px;color:#c9a84c;font-size:.72rem}
+footer{background:#0a080a;border-top:1px solid rgba(201,168,76,.2);padding:36px 16px 110px;text-align:center}
+.footer-logo-img{width:56px;height:56px;border-radius:50%;margin:0 auto 8px;display:block;border:2px solid rgba(201,168,76,.3)}
+.footer-title{font-size:1.15rem;color:#c9a84c;margin-bottom:4px}
+.footer-tag{color:rgba(232,213,176,.45);font-style:italic;margin-bottom:16px;font-size:.88rem}
+.footer-social{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.footer-social a{color:rgba(232,213,176,.55);text-decoration:none;font-size:.65rem;padding:5px 11px;border:1px solid rgba(201,168,76,.15);border-radius:3px}
+.footer-copy{color:rgba(232,213,176,.3);font-size:.75rem}
+.scroll-top{position:fixed;bottom:28px;right:14px;width:42px;height:42px;background:#c9a84c;color:#080508;border:none;border-radius:50%;font-size:1rem;cursor:pointer;z-index:999;display:flex;align-items:center;justify-content:center;font-weight:700}
+.reveal{opacity:1!important;transform:none!important}
+</style>
 </head>
 <body>
 <nav role="navigation">
@@ -41,7 +122,7 @@
     <h1 class="hero-title">TRIDEV CORE HQ</h1>
     <div class="hero-sub">SANATAN KNOWLEDGE PORTAL</div>
     <div class="divider"></div>
-    <p class="hero-tagline">सनातन धर्म — The Eternal Truth<br>नेपालको आत्मा • Soul of Nepal • नेपाल की आत्मा</p>
+    <p class="hero-tagline">सनातन धर्म — The Eternal Truth<br>नेपालको आत्मा • Soul of Nepal</p>
     <img class="banner-img" src="images/tridevcore.png" alt="Tridev Core banner">
     <div class="social-row">
       <a href="https://youtube.com/@TridevCoreHQ" target="_blank" rel="noopener" class="social-btn yt">▶ YouTube</a>
@@ -49,84 +130,84 @@
       <a href="https://instagram.com/tridevcorehq" target="_blank" rel="noopener" class="social-btn ig">◉ Instagram</a>
       <a href="https://facebook.com/TridevCoreHQ" target="_blank" rel="noopener" class="social-btn fb">f Facebook</a>
     </div>
-    <p style="font-style:italic;color:rgba(232,213,176,.4);font-size:.88rem">🇳🇵 Born in Nepal • Speaking to the World • सत्यमेव जयते</p>
+    <p style="font-style:italic;color:rgba(232,213,176,.4);font-size:.88rem">🇳🇵 Born in Nepal • सत्यमेव जयते</p>
   </div>
 </header>
 <section class="full-bg" id="tridev">
 <div class="section-wrap">
-  <h2 class="section-title reveal">🔱 The Holy Trinity — त्रिदेव</h2>
-  <p class="section-sub reveal">ब्रह्मा विष्णु महेश — Brahma Vishnu Mahesh</p>
+  <h2 class="section-title">🔱 The Holy Trinity — त्रिदेव</h2>
+  <p class="section-sub">ब्रह्मा विष्णु महेश</p>
   <div class="tridev-grid">
-    <article class="tcard shiva reveal">
+    <article class="tcard shiva">
       <span class="tcard-icon">⚡</span>
       <div class="tcard-name">SHIVA — शिव</div>
-      <div class="tcard-skt">महादेव • Mahadev</div>
-      <div class="tcard-desc">The Destroyer and Transformer. Supreme consciousness.<br><br><b style="color:var(--gold)">नेपाली:</b> महादेव — सर्वशक्तिमान। पशुपतिनाथको भूमि नेपालमा शिवको वास।</div>
-      <div class="tcard-mantra">ॐ नमः शिवाय | Har Har Mahadev 🔱</div>
+      <div class="tcard-skt">महादेव</div>
+      <div class="tcard-desc">The Destroyer and Transformer.<br><b style="color:#c9a84c">नेपाली:</b> महादेव — सर्वशक्तिमान। पशुपतिनाथ नेपाल।</div>
+      <div class="tcard-mantra">ॐ नमः शिवाय</div>
     </article>
-    <article class="tcard vishnu reveal">
+    <article class="tcard vishnu">
       <span class="tcard-icon">🌊</span>
       <div class="tcard-name">VISHNU — विष्णु</div>
-      <div class="tcard-skt">नारायण • Narayana</div>
-      <div class="tcard-desc">The Preserver. Cosmic protector through ten avatars.<br><br><b style="color:var(--gold)">नेपाली:</b> विष्णु — ब्रह्माण्डका पालनहार। मुक्तिनाथ नेपालमा पवित्र स्थान।</div>
-      <div class="tcard-mantra">ॐ नमो भगवते वासुदेवाय 🌊</div>
+      <div class="tcard-skt">नारायण</div>
+      <div class="tcard-desc">The Preserver. Ten avatars.<br><b style="color:#c9a84c">नेपाली:</b> विष्णु — पालनहार। मुक्तिनाथ।</div>
+      <div class="tcard-mantra">ॐ नमो भगवते वासुदेवाय</div>
     </article>
-    <article class="tcard brahma reveal">
+    <article class="tcard brahma">
       <span class="tcard-icon">🔥</span>
       <div class="tcard-name">BRAHMA — ब्रह्मा</div>
-      <div class="tcard-skt">विधाता • Vidhata</div>
-      <div class="tcard-desc">The Creator of the Universe. Created the Vedas.<br><br><b style="color:var(--gold)">नेपाली:</b> ब्रह्मा — सृष्टिकर्ता।</div>
-      <div class="tcard-mantra">ॐ ब्रह्मणे नमः 🔥</div>
+      <div class="tcard-skt">विधाता</div>
+      <div class="tcard-desc">The Creator of the Universe.<br><b style="color:#c9a84c">नेपाली:</b> ब्रह्मा — सृष्टिकर्ता।</div>
+      <div class="tcard-mantra">ॐ ब्रह्मणे नमः</div>
     </article>
   </div>
 </div>
 </section>
 <section class="section-wrap" id="vedas">
-  <h2 class="section-title reveal">📜 The Four Vedas — चार वेद</h2>
-  <p class="section-sub reveal">Oldest scriptures of humanity</p>
+  <h2 class="section-title">📜 The Four Vedas</h2>
+  <p class="section-sub">Oldest scriptures</p>
   <div class="cards-grid">
-    <article class="card reveal"><span class="card-icon">🌅</span><div class="card-title">Rigveda — ऋग्वेद</div><div class="card-desc">Oldest of four Vedas. 1,028 hymns.</div></article>
-    <article class="card reveal"><span class="card-icon">🎵</span><div class="card-title">Samaveda — सामवेद</div><div class="card-desc">Veda of melodies.</div></article>
-    <article class="card reveal"><span class="card-icon">⚔️</span><div class="card-title">Yajurveda — यजुर्वेद</div><div class="card-desc">Veda of rituals.</div></article>
-    <article class="card reveal"><span class="card-icon">🌿</span><div class="card-title">Atharvaveda — अथर्ववेद</div><div class="card-desc">Everyday life and medicine.</div></article>
+    <article class="card"><span class="card-icon">🌅</span><div class="card-title">Rigveda</div><div class="card-desc">Oldest Veda. 1,028 hymns.</div></article>
+    <article class="card"><span class="card-icon">🎵</span><div class="card-title">Samaveda</div><div class="card-desc">Veda of melodies.</div></article>
+    <article class="card"><span class="card-icon">⚔️</span><div class="card-title">Yajurveda</div><div class="card-desc">Veda of rituals.</div></article>
+    <article class="card"><span class="card-icon">🌿</span><div class="card-title">Atharvaveda</div><div class="card-desc">Everyday life & medicine.</div></article>
   </div>
 </section>
 <section class="full-bg" id="books">
 <div class="section-wrap">
-  <h2 class="section-title reveal">📚 Sacred Books</h2>
-  <p class="section-sub reveal">Read online</p>
+  <h2 class="section-title">📚 Sacred Books</h2>
+  <p class="section-sub">Read online</p>
   <div class="book-grid">
-    <article class="book-card reveal"><div class="book-icon">🌸</div><div class="book-title">Bhagavad Gita</div><div class="book-desc">700 verses by Krishna</div><a href="https://www.holy-bhagavad-gita.org" target="_blank" rel="noopener" class="read-btn">📖 Read</a></article>
-    <article class="book-card reveal"><div class="book-icon">🏹</div><div class="book-title">Ramayana</div><div class="book-desc">Valmiki epic</div><a href="https://www.valmikiramayan.net" target="_blank" rel="noopener" class="read-btn">📖 Read</a></article>
-    <article class="book-card reveal"><div class="book-icon">⚡</div><div class="book-title">Mahabharata</div><div class="book-desc">Longest epic</div><a href="https://www.sacred-texts.com/hin/maha/index.htm" target="_blank" rel="noopener" class="read-btn">📖 Read</a></article>
-    <article class="book-card reveal"><div class="book-icon">🌊</div><div class="book-title">Shiva Purana</div><div class="book-desc">Glory of Mahadev</div><a href="https://www.sacred-texts.com/hin/index.htm" target="_blank" rel="noopener" class="read-btn">📖 Read</a></article>
+    <article class="book-card"><div class="book-icon">🌸</div><div class="book-title">Bhagavad Gita</div><div class="book-desc">700 verses by Krishna</div><a href="https://www.holy-bhagavad-gita.org" target="_blank" rel="noopener" class="read-btn">📖 Read</a></article>
+    <article class="book-card"><div class="book-icon">🏹</div><div class="book-title">Ramayana</div><div class="book-desc">Valmiki epic</div><a href="https://www.valmikiramayan.net" target="_blank" rel="noopener" class="read-btn">📖 Read</a></article>
+    <article class="book-card"><div class="book-icon">⚡</div><div class="book-title">Mahabharata</div><div class="book-desc">Longest epic</div><a href="https://www.sacred-texts.com/hin/maha/index.htm" target="_blank" rel="noopener" class="read-btn">📖 Read</a></article>
+    <article class="book-card"><div class="book-icon">🌊</div><div class="book-title">Shiva Purana</div><div class="book-desc">Glory of Mahadev</div><a href="https://www.sacred-texts.com/hin/index.htm" target="_blank" rel="noopener" class="read-btn">📖 Read</a></article>
   </div>
 </div>
 </section>
 <section class="section-wrap" id="mantras">
-  <h2 class="section-title reveal">🕉 Sacred Mantras</h2>
-  <div class="mantra-block reveal"><div class="mantra-lang">MAHAMRITYUNJAYA</div><div class="mantra-skt">ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ।</div></div>
-  <div class="mantra-block reveal"><div class="mantra-lang">GAYATRI MANTRA</div><div class="mantra-skt">ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि।</div></div>
-  <div class="mantra-block reveal"><div class="mantra-lang">OM NAMAH SHIVAYA</div><div class="mantra-skt">ॐ नमः शिवाय ।</div></div>
+  <h2 class="section-title">🕉 Sacred Mantras</h2>
+  <div class="mantra-block"><div class="mantra-lang">MAHAMRITYUNJAYA</div><div class="mantra-skt">ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ।</div></div>
+  <div class="mantra-block"><div class="mantra-lang">GAYATRI MANTRA</div><div class="mantra-skt">ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि।</div></div>
+  <div class="mantra-block"><div class="mantra-lang">OM NAMAH SHIVAYA</div><div class="mantra-skt">ॐ नमः शिवाय ।</div></div>
 </section>
 <section class="full-bg" id="nepal">
 <div class="section-wrap">
-  <h2 class="section-title reveal">🇳🇵 Nepal — Sacred Land</h2>
+  <h2 class="section-title">🇳🇵 Nepal — Sacred Land</h2>
   <div class="nepal-grid">
-    <article class="nepal-card reveal"><img src="images/Pashupatinath.webp" alt="Pashupatinath" loading="lazy"><div class="nepal-card-body"><div class="ni-title">Pashupatinath</div><div class="ni-text">Most sacred Shiva temple.</div></div></article>
-    <article class="nepal-card reveal"><img src="images/Muktinath.jpg" alt="Muktinath" loading="lazy"><div class="nepal-card-body"><div class="ni-title">Muktinath</div><div class="ni-text">Sacred to Hindus and Buddhists.</div></div></article>
-    <article class="nepal-card reveal"><img src="images/everest.jfif" alt="Everest" loading="lazy"><div class="nepal-card-body"><div class="ni-title">Sagarmatha</div><div class="ni-text">Highest peak on Earth.</div></div></article>
-    <article class="nepal-card reveal"><img src="images/kingdom.jpg" alt="Kingdom" loading="lazy"><div class="nepal-card-body"><div class="ni-title">Hindu Kingdom</div><div class="ni-text">World's only Hindu Kingdom.</div></div></article>
+    <article class="nepal-card"><img src="images/Pashupatinath.webp" alt="Pashupatinath" loading="lazy"><div class="nepal-card-body"><div class="ni-title">Pashupatinath</div><div class="ni-text">Most sacred Shiva temple.</div></div></article>
+    <article class="nepal-card"><img src="images/Muktinath.jpg" alt="Muktinath" loading="lazy"><div class="nepal-card-body"><div class="ni-title">Muktinath</div><div class="ni-text">Sacred to Hindus and Buddhists.</div></div></article>
+    <article class="nepal-card"><img src="images/everest.jfif" alt="Everest" loading="lazy"><div class="nepal-card-body"><div class="ni-title">Sagarmatha</div><div class="ni-text">Highest peak on Earth.</div></div></article>
+    <article class="nepal-card"><img src="images/kingdom.jpg" alt="Kingdom" loading="lazy"><div class="nepal-card-body"><div class="ni-title">Hindu Kingdom</div><div class="ni-text">World's only Hindu Kingdom.</div></div></article>
   </div>
 </div>
 </section>
 <section class="section-wrap" id="gallery">
-  <h2 class="section-title reveal">📸 Gallery</h2>
+  <h2 class="section-title">📸 Gallery</h2>
   <div class="gallery-grid">
-    <figure class="gallery-item reveal"><img src="images/Pashupatinath.webp" alt="Pashupatinath" loading="lazy"><figcaption>Pashupatinath</figcaption></figure>
-    <figure class="gallery-item reveal"><img src="images/Muktinath.jpg" alt="Muktinath" loading="lazy"><figcaption>Muktinath</figcaption></figure>
-    <figure class="gallery-item reveal"><img src="images/everest.jfif" alt="Everest" loading="lazy"><figcaption>Everest</figcaption></figure>
-    <figure class="gallery-item reveal"><img src="images/kingdom.jpg" alt="Kingdom" loading="lazy"><figcaption>Kingdom</figcaption></figure>
+    <figure class="gallery-item"><img src="images/Pashupatinath.webp" alt="Pashupatinath" loading="lazy"><figcaption>Pashupatinath</figcaption></figure>
+    <figure class="gallery-item"><img src="images/Muktinath.jpg" alt="Muktinath" loading="lazy"><figcaption>Muktinath</figcaption></figure>
+    <figure class="gallery-item"><img src="images/everest.jfif" alt="Everest" loading="lazy"><figcaption>Everest</figcaption></figure>
+    <figure class="gallery-item"><img src="images/kingdom.jpg" alt="Kingdom" loading="lazy"><figcaption>Kingdom</figcaption></figure>
   </div>
 </section>
 <footer>
@@ -139,12 +220,9 @@
     <a href="https://instagram.com/tridevcorehq" target="_blank" rel="noopener">Instagram</a>
     <a href="https://facebook.com/TridevCoreHQ" target="_blank" rel="noopener">Facebook</a>
   </div>
-  <p style="color:var(--gold);margin:12px 0">🇳🇵 Jay Nepal | 🕉 Har Har Mahadev</p>
+  <p style="color:#c9a84c;margin:12px 0">🇳🇵 Jay Nepal | 🕉 Har Har Mahadev</p>
   <div class="footer-copy">© TRIDEV CORE HQ | Gaurab Barakoti</div>
 </footer>
 <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<script>
-document.querySelectorAll('.reveal').forEach(el => el.classList.add('show'));
-</script>
 </body>
 </html>
