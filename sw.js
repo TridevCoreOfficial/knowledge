@@ -1,5 +1,5 @@
-const CACHE = 'tridev-v5';
-const ASSETS = ['./images/logo.png', './images/tridevcore.png', './manifest.json'];
+const CACHE = 'tridev-v6';
+const ASSETS = ['./manifest.json'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
@@ -12,7 +12,6 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Network-first for HTML/CSS/JS so updates always show
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   const url = e.request.url;
