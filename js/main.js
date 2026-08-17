@@ -1,5 +1,5 @@
-/* TRIDEV CORE HQ — Main JS final + perf
-   Language, theme, search, active nav, lazy PDF, PWA
+/* TRIDEV CORE HQ — Main JS v22
+   Language, theme, search, active nav, PWA
 */
 (function () {
   var html = document.documentElement;
@@ -79,23 +79,6 @@
   }
   window.addEventListener("scroll", updateNav, { passive: true });
   updateNav();
-
-  // Lazy-load PDF only when near viewport (saves 12MB on first paint)
-  var pdfFrame = document.querySelector(".pdf-box iframe[data-src]");
-  if (pdfFrame && "IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          pdfFrame.src = pdfFrame.getAttribute("data-src");
-          pdfFrame.removeAttribute("data-src");
-          io.disconnect();
-        }
-      });
-    }, { rootMargin: "200px" });
-    io.observe(pdfFrame);
-  } else if (pdfFrame) {
-    pdfFrame.src = pdfFrame.getAttribute("data-src") || pdfFrame.src;
-  }
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./sw.js").catch(function () {});
