@@ -1,4 +1,4 @@
-const CACHE = 'tridev-v8';
+const CACHE = 'tridev-v9';
 const ASSETS = ['./manifest.json'];
 
 self.addEventListener('install', e => {
